@@ -1,6 +1,6 @@
-import { body } from "express-validator";
+const { body } = require("express-validator") 
 
-export const noteValidator = [
+exports.noteValidator = [
   body("title").notEmpty().withMessage("Title is required"),
   body("slug").notEmpty().withMessage("Slug is required"),
   body("content").notEmpty().withMessage("Content is required"),
