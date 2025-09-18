@@ -17,7 +17,7 @@ router.get("/usernote" , fetchUser , getNoteByUserId);
 router.get("/",fetchUser, getNotes);
 router.get("/:id",fetchUser, getNoteById);
 router.put("/:id",fetchUser, noteValidator, updateNote);
-router.delete("/:id",fetchUser, deleteNote);
+//router.delete("/:id",fetchUser, deleteNote);
 
 
 module.exports =  router;
