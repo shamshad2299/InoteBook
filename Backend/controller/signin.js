@@ -43,11 +43,7 @@ exports.userSignIn =async(req, res) =>{
         res.status(500).json({ error: "Failed to create user due to internal server error . Please try again." });
         
       }
-}
-
-
-;
-
+};
 
 exports.verify = (req , res)=>{
   res.status(200).json({

@@ -1,15 +1,9 @@
-const connectToMongo = require("./dataBase");
+const connectToMongo = require("../dataBase");
 require("dotenv").config();
-//const passport = require("passport");
-//const session = require("express-session");
 const cors = require("cors");
 const express = require("express");
-const authRoutes = require("./Routes/auth.js");
-const noteRoutes = require("./Routes/notesRoutes.js")
-const serverless = require("serverless-http");
 
 connectToMongo();
-
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -21,14 +15,9 @@ app.use(express.json());
 app.get("/api/hello", (req, res) => {
   res.json({ message: "Hello from Express on Vercel!" });
 });
-// Routes
-
-app.use("/api/auth", authRoutes);
-app.use("/api/note", noteRoutes);
-
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
 
 module.exports = app;
-module.exports.handler = serverless(app);
+
